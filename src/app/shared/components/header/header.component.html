@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg sticky-top app-navbar">
+  <div class="container">
+
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold" routerLink="/">
+      <i class="fa-brands fa-angular brand-icon"></i> Angular Project Bundle
+    </a>
+
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler border-0" type="button"
+      data-bs-toggle="collapse" data-bs-target="#mainNav"
+      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="mainNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link nav-pill" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <i class="fa-solid fa-house me-1"></i> Home
+          </a>
+        </li>
+
+        <!-- GitHub -->
+        <li class="nav-item">
+          <a class="nav-link nav-pill" href="https://github.com/catMansCodes/angular19-for-fun" target="_blank">
+            <i class="fa-brands fa-github me-1"></i> GitHub
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>

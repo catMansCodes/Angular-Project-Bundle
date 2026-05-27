@@ -1,0 +1,33 @@
+.app-navbar {
+  background-color: #dc3545;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 0.6rem 0;
+}
+
+.navbar-brand {
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.brand-icon {
+  color: #ffffff;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.nav-pill {
+  color: rgba(255, 255, 255, 0.85) !important;
+  border-radius: 20px;
+  padding: 0.4rem 1rem !important;
+  transition: background 0.2s, color 0.2s;
+  font-size: 0.9rem;
+}
+
+.nav-pill:hover,
+.nav-pill.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff !important;
+}
