@@ -1,0 +1,25 @@
+<app-header></app-header>
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="container bg-props">
+
+    <app-heading [heading]="headingTitle" [subHeading]="subHeading"></app-heading>
+
+    <div class="row g-4 pb-4">
+
+      @for(projectCard of projectCard; track projectCard){
+
+      <div class="col-sm-6 col-lg-4">
+        <app-project-card [imageSrc]="projectCard.imageSrc" [title]="projectCard.title"
+          [description]="projectCard.description" [link]="projectCard.link">
+        </app-project-card>
+      </div>
+
+      }
+
+    </div>
+
+  </div>
+</section>
+
+<app-footer></app-footer>

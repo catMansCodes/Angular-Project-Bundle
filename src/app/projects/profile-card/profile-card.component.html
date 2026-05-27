@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+<main class="container bg-props py-4">
+
+    <!-- Row 1: Heading -->
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+            <app-heading [heading]="profileCardHeading" [subHeading]="profileCardSubHeading"></app-heading>
+        </div>
+    </div>
+
+    <!-- Row 2: Two cols — inputs | preview -->
+    <div class="row justify-content-center g-4 mt-2">
+
+        <div class="col-12 col-md-6 col-lg-5">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-4">User Input Details</h5>
+                    <div class="mb-3">
+                        <label for="updateName" class="form-label">Update Name</label>
+                        <input type="text" class="form-control" id="updateName" placeholder="Enter new name"
+                            [(ngModel)]="userName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateAge" class="form-label">Update Age</label>
+                        <input type="number" class="form-control" id="updateAge" placeholder="Enter new age"
+                            [(ngModel)]="userAge">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateDescription" class="form-label">Update Description</label>
+                        <input type="text" class="form-control" id="updateDescription"
+                            placeholder="Enter new description" [(ngModel)]="userDescription">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-5">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-4">User Details</h5>
+                    <p class="card-text"><strong>Name: </strong>{{ userName }}</p>
+                    <p class="card-text"><strong>Age: </strong>{{ userAge }}</p>
+                    <p class="card-text"><strong>Description: </strong>{{ userDescription }}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,78 @@
+<app-header></app-header>
+
+<main class="counter-main container bg-props d-flex flex-column align-items-center justify-content-start px-3 py-4">
+
+    <!-- Heading -->
+    <div class="row justify-content-center w-100">
+        <div class="col-12 col-md-10 col-lg-8">
+            <app-heading [heading]="profileCardHeading" [subHeading]="profileCardSubHeading"></app-heading>
+        </div>
+    </div>
+
+    <!-- Row 1: Add Todo Form -->
+    <div class="row justify-content-center w-100 pb-4">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title mb-3 text-center">Add Todo</h3>
+
+                    <form>
+                        <div class="mb-3">
+                            <label for="todoTask" class="form-label">Task</label>
+                            <input type="text" name="todoTask" class="form-control" placeholder="Enter task description"
+                                [(ngModel)]="newTask" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <button class="btn btn-outline-primary me-1" (click)="addNewTask()"
+                                [disabled]="!newTask.trim()">Save</button>
+                            <button type="reset" class="btn btn-outline-danger">Reset</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 2: Todo Table -->
+    <div class="row justify-content-center w-100 pb-4">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+                    <h3 class="card-title mb-0 text-center">Todo List
+                        <span class="badge bg-secondary ms-1 fs-6">{{ todoList.length }}</span>
+                    </h3>
+
+                    <div class="table-responsive mt-3">
+                        <table class="table table-hover table-striped mb-0">
+                            <thead class="table-dark text-center">
+                                <tr>
+                                    <th scope="col">Task</th>
+                                    <th scope="col" class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let todo of todoList; let i = index">
+                                    <td>{{ todo }}</td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-outline-danger" title="Delete"
+                                            (click)="removeTask(i)">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr *ngIf="todoList.length === 0">
+                                    <td colspan="2" class="text-center text-muted py-3">No todos yet. Add one!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<app-footer></app-footer>
